@@ -1,0 +1,15 @@
+Lanzar el docker desde un terminal:
+docker-compose up
+
+Aplicación PHP:
+Crear carpeta dentro de "wwww", por ejemplo "holamundo", y crear "index.php".
+Se accede en http://localhost/holamundo/
+
+PHPMyAdmin:
+http://localhost:8000/
+usuario: root
+contraseña: test
+(Las claves están en el archivo docker-compose.yml y se pueden cambiar)
+
+Parar el docker:
+Desde el terminal donde se ha lanzado el docker, pulsar "control + c"

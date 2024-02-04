@@ -1,0 +1,130 @@
+body {
+    margin: 0%;
+}
+
+#button_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap:5px;
+    margin-top: 40px;
+}
+
+#button_container button {
+    width: 350px;
+    height: 100px;
+    background-color: rgba(245, 205, 173, 0.788);
+    border-radius: 5px;
+    border: 1px solid rgba(49, 78, 73, 0.521);
+    box-shadow: 0 10px 6px -6px #777
+} 
+
+a {
+    text-decoration: none;
+    color: rgb(24, 80, 71);
+    font-family: 'DM Serif Display', serif;
+    font-size:30px;
+} 
+
+.info {
+    background-color: rgb(247, 226, 226);
+    width: 50%;
+    height: 40%;
+    margin: auto;
+    padding: 30px;
+    gap: 20px;
+    margin-top: 30px;
+} 
+
+.info p {
+    text-align: center;
+    color: rgb(24, 80, 71);
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    margin: auto;
+}
+
+#button_container button:hover {
+    transform: scale(1.1);
+    background-color: rgba(245, 205, 173, 0.897);
+    box-shadow: 0 10px 6px -6px #000;
+} 
+
+#container, #info_container {
+    height:1000px;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#container{
+    background-image: url(./img/background.jpg);
+}
+
+#info_container{
+    background-image: url(./img/background2.jpg);
+}
+
+.header img{
+width: 20px;
+height: 20px;
+}
+
+.fotter {
+    display: flex;
+    justify-content: center;
+    margin-top: 180px;
+}
+.header, .header2, .fotter{
+    text-align: center;
+    padding: 5px;
+    height: 200px;
+    background-color: rgba(245, 205, 173, 0.918);
+    font-size: 2rem;
+    color: rgb(209, 153, 116);
+    font-family: 'DM Serif Display', serif;
+}
+
+.info {
+    text-align: center;
+    padding: 60px;
+    height: 250px;
+    background-color: rgba(245, 205, 173, 0.918);
+    color: rgb(209, 153, 116);
+   
+}
+
+.images{
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 10px;
+
+}
+
+.images img{
+    width: 300px;
+    height: 450px;
+}
+
+legend {
+    text-align: center;
+    color: rgb(24, 80, 71);
+    font-family: 'DM Serif Display', serif;
+    margin-top: 50px;
+    font-size: 2rem;
+
+}
+
+fieldset {
+    width: fit-content;
+    border: 1px solid rgb(24, 80, 71);
+}
+
+.field-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

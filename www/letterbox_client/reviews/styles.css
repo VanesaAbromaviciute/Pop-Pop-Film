@@ -1,0 +1,76 @@
+body {
+  margin: 0%;
+  background-image: url(./img/High-Quality\ Arts\ &\ Entertainment\ Stock\ Photos\ \(1\).jpg);
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.text {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100px;
+  background-color: rgba(245, 205, 173, 0.918);
+  color: rgb(209, 153, 116);
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.589);
+  width: 1000px;
+  height: 400px;
+  margin: 10% auto;
+  padding: 5px;
+}
+
+.table table {
+  margin: 5px;
+  border-collapse: collapse;
+  border: 1px solid rgba(128, 128, 128, 0.582);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 23, 128);
+}
+
+.enlace {
+  width: 500px;
+  height: 70px;
+  font-size: 40px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.486);
+  margin: auto;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  background-color: rgba(255, 255, 255, 0.486);
+  width: 1500px;
+  height: 200px;
+  margin: 10% auto;
+  padding: 5px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.form-container input {
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-family: 'DM Serif Display', serif;
+}
