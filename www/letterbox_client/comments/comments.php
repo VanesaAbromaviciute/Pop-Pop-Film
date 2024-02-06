@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="date" id="date" name="CommentDate">
                     <br>
                     <label for="comments">Comment:</label>
-                    <input type="text" id="comments" name="comments" maxlength="50">
+                    <input type="text" id="comments" name="comments">
                     <br>
                     <label for="CodReview">Review:</label>
                     <select name="CodReview" id="CodReview">
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <br>
         <div class="enlace">
-            <a href="./index.php">Página anterior</a>
+            <a href="./index.php">Previous Page</a>
         </div>
     </body>
 <?php

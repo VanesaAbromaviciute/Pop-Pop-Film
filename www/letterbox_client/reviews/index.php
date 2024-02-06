@@ -67,7 +67,7 @@
     <div class="enlace">
     <a href="./reviews.php">New Review</a>
     <br><br>
-    <a href="../index.php">Página anterior</a>
+    <a href="../index.php">Previous Page</a>
     </div>
 </body>
 

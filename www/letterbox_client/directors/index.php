@@ -58,7 +58,7 @@
     <div class="enlace">
     <a href="./directors.php">New Director</a>
     <br><br>
-    <a href="../index.php">Página anterior</a>
+    <a href="../index.php">Previous Page</a>
     </div>
 </body>
 

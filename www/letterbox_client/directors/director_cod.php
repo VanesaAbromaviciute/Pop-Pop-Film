@@ -55,7 +55,7 @@ curl_close($curl);
 <div class="enlace">
 <a href="./directors.php">New Director</a>
 <br><br>
-<a href="../movies/index.php">Página anterior</a>
+<a href="../movies/index.php">Previous Page</a>
 </div>
 <br>
 </body>

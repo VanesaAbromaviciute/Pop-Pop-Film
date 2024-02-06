@@ -60,7 +60,7 @@
     <div class="enlace">
     <a href="./comments.php">New Comment</a>
     <br><br>
-    <a href="../index.php">Página anterior</a>
+    <a href="../index.php">Previous Page</a>
     </div>
 </body>
 

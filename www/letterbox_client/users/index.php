@@ -58,7 +58,7 @@
     <div class="enlace">
     <a href="./users.php">New User</a>
     <br><br>
-    <a href="../index.php">Página principal</a>
+    <a href="../index.php">Previous Page</a>
     </div>
 </body>
 </html>

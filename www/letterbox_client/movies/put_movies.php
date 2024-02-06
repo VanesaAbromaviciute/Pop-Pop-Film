@@ -25,6 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_close($ch);
 
     $result = json_decode($server_output);
+    $httpCode = 200; // Inicializa httpCode
+
+    if ($httpCode !== 200) {
+        // La pelicula no existe, manejar el error 
+        echo "<p style='color: red;'>La pelicula no existe.</p>";
+        exit();
+    }
     include("view_movies.php");
 } else {
     $Cod = $_GET["Cod"];
@@ -36,6 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $json = curl_exec($curl);
     $movies = json_decode($json);
     curl_close($curl);
+    // Verificar si pelicula no existe y manejar el error
+    if (empty($movies)) {
+        echo "<p style='color: red;'>La pelicula con el código $Cod no existe.</p>";
+        exit();
+    }
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -73,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </form>
         </div>
         <div class="enlace">
-            <a href="./index.php">Página anterior</a>
+            <a href="./index.php">Previous Page</a>
         </div>
     </body>
 <?php

@@ -21,8 +21,18 @@
     curl_setopt($curl, CURLOPT_ENCODING, "");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $json = curl_exec($curl);
-    $users = json_decode($json);
+    // Obtener el código de respuesta HTTP después de la ejecución de curl
+    $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+
     curl_close($curl);
+    // Verificar si el usuario no existe y manejar el error
+    if ($httpCode !== 200 || $json === 'false') {
+        echo "<p style='color: red;'>El usuario no existe.</p>";
+        exit();
+    }
+    $users = json_decode($json);
+
     ?>
     <div class="text">
         <h1>User</h1>
@@ -45,7 +55,7 @@
         </form>
     </div>
     <div class="enlace">
-        <a href="./index.php">Página anterior</a>
+        <a href="./index.php">Previous Page</a>
     </div>
 
 </body>

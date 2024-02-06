@@ -55,6 +55,6 @@ curl_close($curl);
 <div class="enlace">
 <a href="./comments.php">New Comment</a>
 <br><br>
-<a href="../reviews/index.php">Página anterior</a>
+<a href="../reviews/index.php">Previous Page</a>
 <br>
 </div>

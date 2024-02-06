@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <select name="CodUser" id="CodUser">
             <?php
             foreach($users as $user) {?>
-            <option value="<?= $user->CodUser?>"><?= $user->UserName?></option>
+            <option value="<?= $user->CodUser?>"><?=$user->UserName?></option>
             <?php
             }
             ?>
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <select name="CodMovie" id="CodMovie">
             <?php
             foreach($movies as $movie) {?>
-            <option value="<?= $movie->CodMovie?>"><?= $movie->MovieName?></option>
+            <option value="<?= $movie->CodMovie?>"><?=$movie->MovieName?></option>
             <?php
             }
             ?>
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <br>
         <div class="enlace">
-        <a href="./index.php">Página anterior</a>
+        <a href="./index.php">Previous Page</a>
         </div>
 
         </body>

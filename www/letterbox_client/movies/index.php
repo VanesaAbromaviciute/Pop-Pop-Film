@@ -61,7 +61,7 @@
     <div class="enlace">
     <a href="./movies.php">New Movie</a>
     <br><br>
-    <a href="../index.php">Página principal</a>
+    <a href="../index.php">Previous Page</a>
     </div>
     <br>
 </body>

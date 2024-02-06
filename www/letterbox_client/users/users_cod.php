@@ -2,7 +2,7 @@
 require_once "../config.php";
 
 $cod = $_GET["Cod"];
-$apiUrl = $webServer . "/review/$cod/users";
+$apiUrl = $webServer . "/review/$cod/user";
 $curl = curl_init($apiUrl);
 curl_setopt($curl, CURLOPT_ENCODING, "");
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -42,14 +42,14 @@ curl_close($curl);
     foreach ($users as $user) {
     ?>
         <tr>
-            <td><a href="<?= $urlPrefix ?>/view_users.php?Cod=<?= $user->CodUser ?>"><?= $user->CodUser ?></a></td>
-            <td><a href="<?= $urlPrefix ?>/view_reviews.php?Cod=<?= $user->CodReview ?>"><?= $user->CodReview ?></a></td>
+            <td><a href="<?= $urlPrefix ?>/view_users.php?Cod=<?=$user->CodUser ?>"><?=$user->CodUser ?></a></td>
+            <td><a href="<?= $urlPrefix ?>/view_reviews.php?Cod=<?=$user->CodReview ?>"><?=$user->CodReview ?></a></td>
             <td><?= $user->UserName ?></td>
             <td><?= $user->UserLastname ?></td>
             <td><?= $user->UserAge ?></td>
             <td><?= $user->UserNickname ?></td>
-            <td><a href="/put_users.php?Cod=<?= $user->CodUser?>">Edit</a></td>
-            <td><a href="/delete_users.php?Cod=<?= $user->CodUser?>">Delete</a></td>
+            <td><a href="../put_users.php?Cod=<?= $user->CodUser?>">Edit</a></td>
+            <td><a href="../delete_users.php?Cod=<?= $user->CodUser?>">Delete</a></td>
         <tr> 
         <?php
     }
@@ -59,7 +59,7 @@ curl_close($curl);
 <div class="enlace">
 <a href="./users.php">New User</a>
 <br><br>
-<a href="../reviews/index.php">Página anterior</a>
+<a href="../reviews/index.php">Previous Page</a>
 <br>
 </div>
  

@@ -27,7 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
     $result = json_decode($server_output);
     $_GET["CodUser"] = $Cod;
-    include("./view_users.php");
+    $result = json_decode($server_output);
+    $httpCode = 200; // Inicializa httpCode
+
+    if ($httpCode !== 200) {
+        // El usuario no existe, manejar el error 
+        echo "<p style='color: red;'>El user no existe.</p>";
+        exit();
+    }
+    include("view_users.php");
 
 } else {
     $Cod = $_GET["Cod"];
@@ -39,6 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $json = curl_exec($curl);
     $users = json_decode($json);
     curl_close($curl);
+    // Verificar si pelicula no existe y manejar el error
+    if (empty($users)) {
+        echo "<p style='color: red;'>El user con el código $Cod no existe.</p>";
+        exit();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
     </div>
     <div class="enlace">
-    <a href="./index.php">Página anterior</a>
+    <a href="./index.php">Previous Page</a>
     </div>
     </body>
 <?php

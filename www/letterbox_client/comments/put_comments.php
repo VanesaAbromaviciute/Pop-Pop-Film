@@ -22,7 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $server_output = curl_exec($ch);
 
     curl_close($ch);
+    $httpCode = 200; // Inicializa httpCode
 
+    if ($httpCode !== 200) {
+        // El comentario no existe, manejar el error 
+        echo "<p style='color: red;'>El comentario no existe.</p>";
+        exit();
+    }
     $result = json_decode($server_output);
     include("view_comments.php");
 } else {
@@ -35,6 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $json = curl_exec($curl);
     $comments = json_decode($json);
     curl_close($curl);
+    // Verificar si comentario no existe y manejar el error
+    if (empty($comments)) {
+        echo "<p style='color: red;'>El comentario con el código $Cod no existe.</p>";
+        exit();
+    }
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -44,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./styles.css">
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
         </style>
         <title>Update</title>
     </head>
@@ -63,13 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="date" id="date" name="date" value="<?= $comments->CommentDate ?>">
                     <br>
                     <label for="comments">Comment:</label>
-                    <input type="text" id="comment" name="comment" maxlength="50" value="<?= $comments->comments ?>>
+                    <input type="text" id="comment" name="comment" maxlength="50" value="<?= $comments->comments ?>">
                     <br>
                     <input type="submit" value="Save">
                 </form>
         </div>
         <div class="enlace">
-        <a href="./index.php">Página anterior</a>
+            <a href="./index.php">Previous Page</a>
         </div>
     </body>
 <?php

@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <br>
         <div class="enlace">
-        <a href="./index.php">Página anterior</a>
+        <a href="./index.php">Previous Page</a>
         </div>
         </body>
     <?php

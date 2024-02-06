@@ -23,62 +23,74 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $server_output = curl_exec($ch);
 
     curl_close($ch);
-  
     $result = json_decode($server_output);
+    $httpCode = 200; // Inicializa httpCode
+
+    if ($httpCode !== 200) {
+        // El director no existe, manejar el error 
+        echo "<p style='color: red;'>El director no existe.</p>";
+        exit();
+    }
     $_GET["CodDirector"] = $Cod;
     include("view_directors.php");
-
 } else {
     $Cod = $_GET["Cod"];
     $apiUrl = $webServer . '/directors/' . $Cod;
-    
+
     $curl = curl_init($apiUrl);
-    curl_setopt($curl, CURLOPT_ENCODING ,"");
+    curl_setopt($curl, CURLOPT_ENCODING, "");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $json = curl_exec($curl);
     $directors = json_decode($json);
     curl_close($curl);
+        // Verificar si director no existe y manejar el error
+        if (empty($directors)) {
+            echo "<p style='color: red;'>El director con el código $Cod no existe.</p>";
+            exit();
+        }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
-    </style>
-    <title>Update Director</title>
-</head>
-<body>
-    <div class="text">
-    <h1>Update Director</h1>
-    </div>
-    <div class="form-container">
-    <form method="post">
-        <form>
-            <label for="Cod">Cod:</label>
-            <input type="text" id="Cod" name="Cod" value="<?= $directors->CodDirector ?>" disabled>
-            <br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"  maxlength="10" value="<?= $directors->DirectorName ?>" >
-            <br>
-            <label for="lastname">Lastname:</label>
-            <input type="text" id="lastname" name="lastname" maxlength="15" value="<?= $directors->DirectorLastname ?>" >
-            <br>
-            <label for="age">Age:</label>
-            <input type="date" id="age" name="age" value="<?= $directors->DirectorAge ?>">
-        <br>
-        <input type="submit" value="Save">
-    </form>
-    </div>
-    <div class="enlace">
-    <a href="./index.php">Página anterior</a>
-    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+        </style>
+        <title>Update Director</title>
+    </head>
+
+    <body>
+        <div class="text">
+            <h1>Update Director</h1>
+        </div>
+        <div class="form-container">
+            <form method="post">
+                <form>
+                    <label for="Cod">Cod:</label>
+                    <input type="text" id="Cod" name="Cod" value="<?= $directors->CodDirector ?>" disabled>
+                    <br>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" maxlength="10" value="<?= $directors->DirectorName ?>">
+                    <br>
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" id="lastname" name="lastname" maxlength="15" value="<?= $directors->DirectorLastname ?>">
+                    <br>
+                    <label for="age">Age:</label>
+                    <input type="date" id="age" name="age" value="<?= $directors->DirectorAge ?>">
+                    <br>
+                    <input type="submit" value="Save">
+                </form>
+        </div>
+        <div class="enlace">
+            <a href="./index.php">Previous Page</a>
+        </div>
 
     </body>
 <?php
 }
 ?>
 
-</html>
+    </html>
