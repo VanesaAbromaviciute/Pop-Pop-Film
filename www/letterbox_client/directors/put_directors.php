@@ -61,10 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" id="Cod" name="Cod" value="<?= $directors->CodDirector ?>" disabled>
             <br>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="<?= $directors->DirectorName ?>" >
+            <input type="text" id="name" name="name"  maxlength="10" value="<?= $directors->DirectorName ?>" >
             <br>
             <label for="lastname">Lastname:</label>
-            <input type="text" id="lastname" name="lastname" value="<?= $directors->DirectorLastname ?>" >
+            <input type="text" id="lastname" name="lastname" maxlength="15" value="<?= $directors->DirectorLastname ?>" >
             <br>
             <label for="age">Age:</label>
             <input type="date" id="age" name="age" value="<?= $directors->DirectorAge ?>">

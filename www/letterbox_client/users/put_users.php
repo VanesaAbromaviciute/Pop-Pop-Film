@@ -62,13 +62,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" id="Cod" name="Cod" value="<?= $users->CodUser ?>" disabled>
             <br>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="<?= $users->UserName ?>" max="10">
+            <input type="text" id="name" name="name" value="<?= $users->UserName ?>" maxlength="10">
             <br>
             <label for="lastname">Lastname:</label>
-            <input type="text" id="lastname" name="lastname" value="<?= $users->UserLastname ?>" max="15" >
+            <input type="text" id="lastname" name="lastname" value="<?= $users->UserLastname ?>" maxlength="15" >
             <br>
             <label for="nickname">Nickname:</label>
-            <input type="text" id="nickname" name="nickname" value="<?= $users->UserNickname ?>" max="15">
+            <input type="text" id="nickname" name="nickname" value="<?= $users->UserNickname ?>" maxlength="15">
             <br>
             <label for="age">Age:</label>
             <input type="date" id="age" name="age" value="<?= $users->UserAge ?>">

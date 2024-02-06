@@ -51,13 +51,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post">
         <form>
             <label for="name">Movie Name:</label>
-            <input type="text" id="name" name="MovieName">
+            <input type="text" id="name" maxlength="20" name="MovieName">
             <br>
             <label for="duration">Movie Duration:</label>
-            <input type="text" id="duration" name="MovieDuration">
+            <input type="text" id="duration" maxlength="3" name="MovieDuration">
             <br>
-            <label for="date">Release Date:</label>
-            <input type="text" id="date" name="ReleaseDate">
+            <label for="date">Release Year:</label>
+            <input type="text" id="date" maxlength="4" name="ReleaseDate">
             <br>
             <label for="CodDirector">Director:</label>
           <select name="CodDirector" id="CodDirector">

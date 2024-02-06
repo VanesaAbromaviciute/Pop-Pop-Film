@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="date" id="date" name="date" value="<?= $comments->CommentDate ?>">
                     <br>
                     <label for="comments">Comment:</label>
-                    <input type="text" id="comment" name="comment" value="<?= $comments->comments ?>">
+                    <input type="text" id="comment" name="comment" maxlength="50" value="<?= $comments->comments ?>>
                     <br>
                     <input type="submit" value="Save">
                 </form>

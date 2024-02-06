@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="date" id="date" name="CommentDate">
                     <br>
                     <label for="comments">Comment:</label>
-                    <input type="text" id="comments" name="comments">
+                    <input type="text" id="comments" name="comments" maxlength="50">
                     <br>
                     <label for="CodReview">Review:</label>
                     <select name="CodReview" id="CodReview">

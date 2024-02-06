@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="date" id="date" name="ReviewDate">
             <br>
             <label for="star">StarNumber:</label>
-            <input type="text" id="star" name="StarNumber">
+            <input type="text" id="star" name="StarNumber" maxlength="5">
             <br>
             <label for="CodUser">Usuario:</label>
           <select name="CodUser" id="CodUser">

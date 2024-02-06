@@ -45,10 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="post">
         <form>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="DirectorName">
+            <input type="text" id="name"  maxlength="10" name="DirectorName">
             <br>
             <label for="lastname">Lastname:</label>
-            <input type="text" id="lastname" name="DirectorLastname">
+            <input type="text" id="lastname"maxlength="15" name="DirectorLastname">
             <br>
             <label for="age">Age:</label>
             <input type="date" id="age" name="DirectorAge">

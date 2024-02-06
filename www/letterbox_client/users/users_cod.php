@@ -10,7 +10,22 @@ $json = curl_exec($curl);
 $users = json_decode($json);
 curl_close($curl);
 ?>
-<h1>Usuarios de una review</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+    </style>
+</head>
+<body>
+<div class="text">
+<h1>Users of review</h1>
+</div>
+<div class="table">
 <table border="1">
     <tr>
         <td>Cod User</td>
@@ -40,7 +55,13 @@ curl_close($curl);
     }
         ?>
 </table>
+</div>
+<div class="enlace">
 <a href="./users.php">New User</a>
 <br><br>
-<a href="../index.php">Página anterior</a>
+<a href="../reviews/index.php">Página anterior</a>
 <br>
+</div>
+ 
+</body>
+</html>

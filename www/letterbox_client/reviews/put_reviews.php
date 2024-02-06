@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="date" id="date" name="date" value="<?= $reviews->ReviewDate ?>" >
             <br>
             <label for="stars">Star Number:</label>
-            <input type="text" id="stars" name="stars" value="<?= $reviews->StarNumber ?>" >
+            <input type="text" id="stars" name="stars" maxlength="5" value="<?= $reviews->StarNumber ?>" >
         <br>
         <input type="submit" value="Save">
     </form>

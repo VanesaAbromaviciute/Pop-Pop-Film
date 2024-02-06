@@ -61,13 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="text" id="Cod" name="Cod" value="<?= $movies->CodMovie ?>" disabled>
                     <br>
                     <label for="name">Movie Name:</label>
-                    <input type="text" id="name" name="name" value="<?= $movies->MovieName ?>">
+                    <input type="text" id="name" name="name" maxlength="20" value="<?= $movies->MovieName ?>">
                     <br>
                     <label for="duartion">Movie Duration:</label>
-                    <input type="text" id="duration" name="duration" value="<?= $movies->MovieDuration ?>">
+                    <input type="text" id="duration" name="duration" maxlength="3" value="<?= $movies->MovieDuration ?>">
                     <br>
-                    <label for="date">Release Date:</label>
-                    <input type="text" id="date" name="date" value="<?= $movies->ReleaseDate ?>">
+                    <label for="date">Release Year:</label>
+                    <input type="text" id="date" name="date" maxlength="4" value="<?= $movies->ReleaseDate ?>">
                     <br>
                     <input type="submit" value="Save">
                 </form>
